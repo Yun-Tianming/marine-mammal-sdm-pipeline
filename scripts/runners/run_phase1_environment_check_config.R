@@ -1,4 +1,4 @@
-# 第 1 阶段轻量入口：执行环境检查，不重跑后续分析。
+# Recommended runner: phase 1 only.
 source("R/config.R")
 source("R/pipeline_steps.R")
 args <- commandArgs(trailingOnly = TRUE)

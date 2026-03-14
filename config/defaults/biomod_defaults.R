@@ -1,4 +1,4 @@
-# biomod2 默认参数 ---------------------------------------------------------------
+# Shared biomod2 defaults
 
 biomod_defaults <- list(
   models = c("GLM", "GAM", "GBM", "RF", "SRE"),

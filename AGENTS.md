@@ -1,32 +1,32 @@
 # AGENTS.md
 
-## 交流与汇报
+## Communication
 
-- 与用户交流默认使用中文。
-- 阶段性结果汇报必须写出明确文件路径。
-- 汇报格式优先使用：文件名、路径、用途、是否成功生成。
+- Use Chinese when communicating with the user.
+- Result reports must include explicit file paths.
+- Prefer the reporting format: file name, path, purpose, generated or not.
 
-## 分析与建模约束
+## Analysis and modeling
 
-- 默认不要重跑 biomod2，除非用户明确要求。
-- 默认不要重跑已经完成的数据分析、环境变量处理或研究区构建，除非用户明确要求。
-- 新增物种或区域时，优先修改 `config/`，不要直接硬改 `R/` 函数。
+- Do not rerun biomod2 unless the user explicitly asks for it.
+- Do not rerun completed analysis, environmental preprocessing, or study area construction unless the user explicitly asks for it.
+- When adding a new species or region, change `config/` first instead of hard-coding logic in `R/`.
 
-## 输出路径约定
+## Output path policy
 
-- 新的正式输出统一写入 `outputs/<run_id>/`。
-- `outputs/` 根目录和其他历史路径只作为 legacy compatibility，不应再作为首选真源。
-- 新脚本应优先使用 `R/config.R` 中的输出路径辅助函数，不要手写分散路径。
+- Formal outputs must go to `outputs/<run_id>/`.
+- Root-level `outputs/` files and other old paths are legacy compatibility only.
+- New scripts should use helper functions from `R/config.R` instead of hand-written output paths.
 
-## 绘图约定
+## Plotting
 
-- 图件默认白色背景，不使用透明背景。
-- 图件应适合汇报、论文初稿或正式展示。
-- 绘图脚本默认输出到 `outputs/<run_id>/figures/`。
+- Figures should default to a white background.
+- Figures should be suitable for reporting or manuscript drafts.
+- Figure outputs should go to `outputs/<run_id>/figures/` by default.
 
-## 代码组织约定
+## Code organization
 
-- `scripts/runners/` 存放推荐入口脚本。
-- `scripts/dev/` 存放调试、测试和临时脚本。
-- `scripts/legacy/` 存放旧版但暂不删除的脚本。
-- 调试脚本不要放回项目根目录。
+- `scripts/runners/` stores recommended entry scripts.
+- `scripts/dev/` stores debugging and temporary scripts.
+- `scripts/legacy/` stores historical scripts kept for traceability.
+- Do not place debugging scripts back in the project root.

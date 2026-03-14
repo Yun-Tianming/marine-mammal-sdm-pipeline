@@ -1,4 +1,4 @@
-# predictor 与 pseudo-absence 默认参数 ------------------------------------------
+# Shared predictor defaults
 
 predictor_defaults <- list(
   full = c("bathymetry", "slope", "sst", "chlorophyll_a", "sea_ice_concentration"),

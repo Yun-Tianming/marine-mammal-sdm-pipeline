@@ -1,16 +1,13 @@
-# 通用 run config 模板
-# 用法：复制到 config/runs/<your_run_id>.R，然后按注释替换。
+# Generic run config template
 
 config <- list(
   run_id = "your_run_id",
-  description = "请填写本次运行的说明。",
-
+  description = "Describe this run.",
   species = list(
     target_name_cn = "目标物种中文名",
     target_name_en = "Target species English name",
     target_value = "用于 occurrence 筛选的标准物种名"
   ),
-
   input = list(
     raw_data_dir = "data_raw",
     workbooks = list(
@@ -31,7 +28,6 @@ config <- list(
       )
     )
   ),
-
   region = list(
     name = "display region name",
     display_lon = c(0, 100),
@@ -39,13 +35,11 @@ config <- list(
     graticule_lon = seq(10, 90, by = 10),
     graticule_lat = seq(-70, -60, by = 2)
   ),
-
   study_area = list(
     method = "convex_hull_buffer",
     analysis_crs = "EPSG:3031",
     buffer_km = 150
   ),
-
   predictors = list(
     full = c("bathymetry", "slope"),
     extended = c("bathymetry", "slope"),
@@ -55,14 +49,12 @@ config <- list(
     processed_stack = "env_processed/predictors_stack.tif",
     processed_stack_extended = "env_processed/predictors_stack_extended.tif"
   ),
-
   pseudo_absence = list(
     strategy = "random_background",
     multiplier = 5L,
     min_n = 300L,
     max_n = 1000L
   ),
-
   biomod2 = list(
     models = c("GLM", "GAM", "GBM", "RF", "SRE"),
     cv_strategy = "random",
@@ -77,7 +69,6 @@ config <- list(
     seed = 20260314L,
     nb_cpu = 1L
   ),
-
   outputs = list(
     base_dir = "outputs",
     run_dir = file.path("outputs", "your_run_id"),

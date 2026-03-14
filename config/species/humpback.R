@@ -1,4 +1,4 @@
-# 物种配置：座头鲸 ---------------------------------------------------------------
+# Species config: humpback whale
 
 species_humpback <- list(
   target_name_cn = "座头鲸",

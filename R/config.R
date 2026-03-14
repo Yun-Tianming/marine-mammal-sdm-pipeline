@@ -1,21 +1,17 @@
-# 配置与输出路径辅助函数 --------------------------------------------------------
+# Config and output-path helpers
 
-# 中文说明：返回项目根目录。
 sdm_project_root <- function() {
   normalizePath(".", winslash = "/", mustWork = TRUE)
 }
 
-# 中文说明：拼接并标准化路径。
 sdm_abs_path <- function(...) {
   normalizePath(file.path(...), winslash = "/", mustWork = FALSE)
 }
 
-# 中文说明：返回默认 run config 路径。
 sdm_default_config_path <- function(project_root = sdm_project_root()) {
   sdm_abs_path(project_root, "config", "runs", "humpback_cosmonaut.R")
 }
 
-# 中文说明：读取 run config，配置文件必须定义对象 config。
 sdm_load_config <- function(config_path = sdm_default_config_path()) {
   env <- new.env(parent = baseenv())
   assign(".__config_file__", normalizePath(config_path, winslash = "/", mustWork = TRUE), envir = env)
@@ -35,8 +31,6 @@ sdm_load_config <- function(config_path = sdm_default_config_path()) {
   cfg
 }
 
-# 中文说明：构建 run_id 级别输出路径。
-# 正式输出统一写入 outputs/<run_id>/，旧路径只保留为兼容层。
 sdm_build_run_paths <- function(config) {
   root <- config$project_root
   run_dir_rel <- config$outputs$run_dir
@@ -81,7 +75,6 @@ sdm_build_run_paths <- function(config) {
   paths
 }
 
-# 中文说明：返回正式输出路径。
 sdm_output_path <- function(run_paths, category, ..., ext = NULL) {
   category_map <- list(
     tables = run_paths$tables_dir,
@@ -97,13 +90,12 @@ sdm_output_path <- function(run_paths, category, ..., ext = NULL) {
   }
 
   file_name <- if (length(list(...)) == 0) "" else file.path(...)
-  if (!is.null(ext) && nzchar(file_name) && !grepl(paste0("\\", ext, "$"), file_name)) {
+  if (!is.null(ext) && nzchar(file_name) && !grepl(paste0('\\', ext, '$'), file_name)) {
     file_name <- paste0(file_name, ext)
   }
   sdm_abs_path(category_map[[category]], file_name)
 }
 
-# 中文说明：返回 legacy 兼容路径。
 sdm_legacy_output_path <- function(run_paths, key) {
   if (!key %in% names(run_paths$legacy)) {
     stop(sprintf("Unsupported legacy output key: %s", key), call. = FALSE)
@@ -111,7 +103,6 @@ sdm_legacy_output_path <- function(run_paths, key) {
   run_paths$legacy[[key]]
 }
 
-# 中文说明：按需复制兼容文件到历史路径。
 sdm_write_legacy_copy <- function(source_path, legacy_path, enabled = TRUE) {
   if (!enabled || !file.exists(source_path)) {
     return(invisible(FALSE))

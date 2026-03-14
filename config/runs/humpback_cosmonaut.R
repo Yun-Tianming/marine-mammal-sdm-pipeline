@@ -1,5 +1,4 @@
-# 默认运行配置：座头鲸 / 宇航员调查数据 -----------------------------------------
-# 中文说明：run config 负责拼装，新增物种或区域时优先改 config 目录。
+# Default run config: humpback whale / cosmonaut survey
 
 this_config_file <- if (exists(".__config_file__", inherits = FALSE)) {
   get(".__config_file__", inherits = FALSE)
@@ -15,7 +14,7 @@ sys.source(file.path(config_root, "defaults", "predictor_defaults.R"), envir = e
 
 config <- list(
   run_id = "humpback_cosmonaut",
-  description = "座头鲸 SDM 默认运行配置，基于宇航员航次观测与现有南极沿岸研究区。",
+  description = "Default humpback SDM run based on cosmonaut survey data and the current Antarctic coastal study area.",
   species = species_humpback,
   input = list(
     raw_data_dir = "data_raw",

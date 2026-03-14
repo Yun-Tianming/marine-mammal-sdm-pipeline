@@ -1,7 +1,4 @@
-# 示例 run config：仅供复制和改名，不会自动触发分析 ------------------------------
-# 说明：
-# 1. 本文件演示如何基于 species / regions / defaults 进行轻量拼装。
-# 2. 请复制后改名为实际 run_id，再替换输入文件和目标物种。
+# Example run config template
 
 this_config_file <- if (exists(".__config_file__", inherits = FALSE)) {
   get(".__config_file__", inherits = FALSE)
@@ -17,7 +14,7 @@ sys.source(file.path(config_root, "defaults", "predictor_defaults.R"), envir = e
 
 config <- list(
   run_id = "example_run_template",
-  description = "示例 run config，用于演示如何拼装一个新的运行配置。",
+  description = "Example run config that shows how to assemble a new run without modifying core functions.",
   species = species_humpback,
   input = list(
     raw_data_dir = "data_raw",
@@ -26,14 +23,14 @@ config <- list(
     ),
     source_schemas = list(
       schema_a = list(
-        survey_date_raw = "日期列名",
-        survey_time_raw = "时间列名",
-        species_cn = "物种列名",
-        region = "区域列名或 NULL",
-        lon_raw = "经度列名",
-        lat_raw = "纬度列名",
-        count_raw = "数量列名",
-        distance_m_raw = "距离列名或 NULL",
+        survey_date_raw = "Date column",
+        survey_time_raw = "Time column",
+        species_cn = "Species column",
+        region = "Region column or NULL",
+        lon_raw = "Longitude column",
+        lat_raw = "Latitude column",
+        count_raw = "Count column",
+        distance_m_raw = "Distance column or NULL",
         lon_default_hemisphere = "E",
         lat_default_hemisphere = "S"
       )

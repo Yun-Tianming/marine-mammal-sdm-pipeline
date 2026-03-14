@@ -1,4 +1,4 @@
-# 区域配置：宇航员扇区 -----------------------------------------------------------
+# Region config: Cosmonaut coastal sector
 
 region_cosmonaut <- list(
   name = "Antarctic coastal sector",
