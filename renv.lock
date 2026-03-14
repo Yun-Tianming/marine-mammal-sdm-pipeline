@@ -1,0 +1,95 @@
+{
+  "R": {
+    "Version": "4.5.0",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cloud.r-project.org"
+      }
+    ]
+  },
+  "Python": null,
+  "Packages": {
+    "biomod2": {
+      "Package": "biomod2",
+      "Version": "4.2-4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["stats", "utils", "methods", "terra", "sp", "reshape", "reshape2", "abind", "foreach", "ggplot2", "nnet", "gbm", "xgboost", "mda", "randomForest", "maxnet", "rpart", "MASS", "pROC", "PresenceAbsence", "earth", "dplyr", null]
+    },
+    "terra": {
+      "Package": "terra",
+      "Version": "1.7-71",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["methods", "Rcpp"]
+    },
+    "sf": {
+      "Package": "sf",
+      "Version": "1.0-20",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["methods", "classInt", "DBI", "graphics", "grDevices", "grid", "magrittr", "s2", "stats", "tools", "units", "utils", "Rcpp"]
+    },
+    "readxl": {
+      "Package": "readxl",
+      "Version": "1.4.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cellranger", "tibble", "utils", "cpp11", "progress"]
+    },
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.1.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cli", "generics", "glue", "lifecycle", "magrittr", "methods", "pillar", "R6", "rlang", "tibble", "tidyselect", "utils", "vctrs", null]
+    },
+    "ggplot2": {
+      "Package": "ggplot2",
+      "Version": "3.5.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cli", "glue", "grDevices", "grid", "gtable", "isoband", "lifecycle", "MASS", "mgcv", "rlang", "scales", "stats", "tibble", "vctrs", "withr", null]
+    },
+    "tidyr": {
+      "Package": "tidyr",
+      "Version": "1.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cli", "dplyr", "glue", "lifecycle", "magrittr", "purrr", "rlang", "stringr", "tibble", "tidyselect", "utils", "vctrs", "cpp11"]
+    },
+    "stringr": {
+      "Package": "stringr",
+      "Version": "1.5.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cli", "glue", "lifecycle", "magrittr", "rlang", "stringi", "vctrs", null]
+    },
+    "lubridate": {
+      "Package": "lubridate",
+      "Version": "1.9.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["methods", "generics", "timechange", null]
+    },
+    "purrr": {
+      "Package": "purrr",
+      "Version": "1.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["cli", "lifecycle", "magrittr", "rlang", "vctrs"]
+    },
+    "testthat": {
+      "Package": "testthat",
+      "Version": "3.2.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": ["brio", "callr", "cli", "desc", "digest", "evaluate", "jsonlite", "lifecycle", "magrittr", "methods", "pkgload", "praise", "processx", "ps", "R6", "rlang", "utils", "waldo", "withr", null]
+    }
+  },
+  "Notes": {
+    "generated_by": "bootstrap_lockfile_without_renv",
+    "note": "The renv package is not installed locally; this lock file was generated from installed.packages() as a bootstrap manifest. Install renv and run renv::snapshot() for a full lock file."
+  }
+}
