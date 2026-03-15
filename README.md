@@ -1,5 +1,7 @@
 # codex_sdm
 
+English | [简体中文](README_CN.md)
+
 ## Overview
 
 This repository is the stable v1 of a configuration-driven SDM pipeline.
